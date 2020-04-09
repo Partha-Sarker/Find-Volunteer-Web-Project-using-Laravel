@@ -1,0 +1,97 @@
+*Add count to everything
+*Add availability option for volunteer
+*User must fill profile after signing up
+*All validation rule
+*Flash success message broken
+*View all page for everything
+*Member email directs to volunteer email
+*Add notification system
+*Add sort by option
+*Image name can't be no_image.png or no_avatar.png
+*Replace <br> with margin
+*Refresh whole database
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+$pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
+
+if($pageWasRefreshed ) {
+   //do something because page was refreshed;
+} else {
+   //do nothing;
+}
+
+->resize(500, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+
+         /**
+     * Display the specified resource.
+     *
+     * @param  \App\EventPhoto  $eventPhoto
+     * @return \Illuminate\Http\Response
+     */
+    public function show(EventPhoto $eventPhoto)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\EventPhoto  $eventPhoto
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(EventPhoto $eventPhoto)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\EventPhoto  $eventPhoto
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, EventPhoto $eventPhoto)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\EventPhoto  $eventPhoto
+     * @return \Illuminate\Http\Response
+     */
