@@ -72,8 +72,8 @@
             @else
                 <h2 class="text-center">No event</h2>
             @endif
-            <br>
-            <ul class="pagination justify-content-center">{{ $events->links() }}</ul>
+            {{-- <br>
+            <ul class="pagination justify-content-center">{{ $events->links() }}</ul> --}}
         </div>
         <div class="col-md-3">
             <div class="card">

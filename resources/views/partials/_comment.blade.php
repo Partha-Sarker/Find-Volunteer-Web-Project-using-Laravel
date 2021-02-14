@@ -14,7 +14,7 @@
                 {{-- <button class="btn btn-link mx-0 px-0" type="submit"><i class="fas fa-trash"></i></button> --}}
                 <a href="{{route('comment.edit',[$circular->id, $comment])}}" class="btn btn-warning btn-sm p-0 m-0 float-right">Edit</a>
                 {{-- <a href="{{route('comment.edit',[$circular->id, $comment])}}"><i class="far fa-edit"></i></a> --}}
-            @elseif($circular->Event->Organization->id == Auth::user()->id)
+            @elseif($circular->Event->Organization->user_id == Auth::user()->id)
                 <button type="submit" class="btn btn-danger btn-sm p-0 m-0 float-right">Delete</button>
                 {{-- <button class="btn btn-link mx-0 px-0" type="submit"><i class="fas fa-trash"></i></button> --}}
             @endif

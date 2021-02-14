@@ -30,12 +30,12 @@ class OrganizationController extends Controller
     {
         $searchItem = Input::get('search');
         if($searchItem == null || $searchItem == ""){
-            $organizations = Organization::all()->paginateCollection(5);
+            $organizations = Organization::all();
         }
         else{
-            $organizations = Organization::query()->where('name', 'LIKE', "%{$searchItem}%")->get()->paginateCollection(5);
+            $organizations = Organization::query()->where('name', 'LIKE', "%{$searchItem}%")->get();
         }
-        $organizations->setPath('organization');
+        // $organizations->setPath('organization');
         $user = Auth::user();
         if($user == null) return view('organization.index')->withOrganizations($organizations);
         else if($user->role == 'volunteer'){

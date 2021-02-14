@@ -31,7 +31,7 @@
                     @else 
                         No comment
                     @endif
-                    <ul class="pagination justify-content-center mt-4 mb-0 p-0">{{ $comments->links() }}</ul>
+                    {{-- <ul class="pagination justify-content-center mt-4 mb-0 p-0">{{ $comments->links() }}</ul> --}}
                 </div>
             </div>
         </div>

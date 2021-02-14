@@ -79,8 +79,8 @@ class CircularController extends Controller
     public function show($id, Circular $circular)
     {
         $event = $circular->Event;
-        $comments = $circular->Comment->sortByDesc('updated_at')->paginateCollection(10);
-        $comments->setPath($circular->id);
+        $comments = $circular->Comment->sortByDesc('updated_at');
+        // $comments->setPath($circular->id);
         $participants = $circular->Volunteers->sortByDesc('updated_at');
         return view('circular.show')->withCircular($circular)->withEvent($event)->withComments($comments)->withParticipants($participants);
     }

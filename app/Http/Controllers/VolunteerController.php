@@ -30,12 +30,12 @@ class VolunteerController extends Controller
     {
         $searchItem = Input::get('search');
         if($searchItem == null || $searchItem == ""){
-            $volunteers = Volunteer::all()->paginateCollection(20);
+            $volunteers = Volunteer::all();
         }
         else{
-            $volunteers = Volunteer::query()->where('first_name', 'LIKE', "%{$searchItem}%")->orWhere('last_name', 'LIKE', "%{$searchItem}%")->get()->paginateCollection(20);
+            $volunteers = Volunteer::query()->where('first_name', 'LIKE', "%{$searchItem}%")->orWhere('last_name', 'LIKE', "%{$searchItem}%")->get();
         }
-        $volunteers->setPath('volunteer');
+        // $volunteers->setPath('volunteer');
         $user = Auth::user();
         if($user == null || $user->role=='volunteer') return view('volunteer.index')->withvolunteers($volunteers);
         else{

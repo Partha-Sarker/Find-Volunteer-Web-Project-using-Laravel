@@ -30,12 +30,12 @@ class EventController extends Controller
     {
         $searchItem = Input::get('search');
         if($searchItem == null || $searchItem == ""){
-            $events = Event::all()->paginateCollection(5);
+            $events = Event::all();
         }
         else{
-            $events = Event::query()->where('name', 'LIKE', "%{$searchItem}%")->get()->paginateCollection(5);
+            $events = Event::query()->where('name', 'LIKE', "%{$searchItem}%")->get();
         }
-        $events->setPath('event');
+        // $events->setPath('event');
         $user = Auth::user();
         if($user == null) return view('event.index')->withevents($events);
         else if($user->role == 'volunteer'){

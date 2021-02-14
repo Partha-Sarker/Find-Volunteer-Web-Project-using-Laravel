@@ -31,13 +31,17 @@ class HomeController extends Controller
     {   
         $searchItem = Input::get('search');
         if($searchItem == null || $searchItem == ""){
-            $circulars = Circular::all()->sortByDesc('updated_at')->paginateCollection(5);
+            // $circulars = Circular::all()->sortByDesc('updated_at')->paginateCollection(5);
+            $circulars = Circular::all()->sortByDesc('updated_at');
+        // }
         }
         else{
-            $circulars = Circular::query()->where('name', 'LIKE', "%{$searchItem}%")->get()->paginateCollection(5);
+            // $circulars = Circular::query()->where('name', 'LIKE', "%{$searchItem}%")->get()->paginateCollection(5);
+            $circulars = Circular::query()->where('name', 'LIKE', "%{$searchItem}%")->get();
+        // }
         }
         $volunteers = Volunteer::all()->sortByDesc('rating')->take(10);
-        $circulars->setPath('home');
+        // $circulars->setPath('home');
         if($user = Auth::user()){
             if($user->role=='volunteer'){
                 $volunteer = $user->Volunteer;

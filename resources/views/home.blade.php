@@ -26,8 +26,8 @@
             @else
                 <h2 class="text-center">No Circular</h2>
             @endif
-            <br>
-            <ul class="pagination justify-content-center">{{ $circulars->links() }}</ul>
+            {{-- <br>
+            <ul class="pagination justify-content-center">{{ $circulars->links() }}</ul> --}}
             <br><br>
         </div>
         <div class="col-md-3">

@@ -25,7 +25,9 @@
                     @php
                         // $data = DB::table('circular_volunteer')->where('circular_id', 3)->where('volunteer_id', Auth::user()->Volunteer->id)->first();
                         $data = App\CircularVolunteer::where(['circular_id' => $circular->id,'volunteer_id' => Auth::user()->Volunteer->id])->first();
-                        $status=$data['status'];
+                        $status = "nothing";
+                        if ($data != null)
+                            $status=$data['status'];
                     @endphp
                     @if ($status=='pending')
                         <form action="{{route('volunteer.joinRequest', $circular)}}" method="POST">
